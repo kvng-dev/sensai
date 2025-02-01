@@ -69,7 +69,7 @@ const Header = async () => {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href="/resume" className="flex items-center gap-2">
+                  <Link href="/interview" className="flex items-center gap-2">
                     <GraduationCap className="h-4 w-4" />
                     <span>Interview Prep</span>
                   </Link>
