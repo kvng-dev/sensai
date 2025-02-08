@@ -7,9 +7,8 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
-const CoverLetter = async ({ params }) => {
+const NewCoverLetter = async ({ params }) => {
   const id = await params;
-
 
   return (
     <div>
@@ -35,4 +34,4 @@ const CoverLetter = async ({ params }) => {
     </div>
   );
 };
-export default CoverLetter;
+export default NewCoverLetter;

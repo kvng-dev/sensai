@@ -10,7 +10,7 @@ const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
 });
 
-export async function saveResume() {
+export async function saveResume(content) {
   const { userId } = await auth();
   if (!userId) throw new Error("Unathorized");
 
@@ -27,10 +27,10 @@ export async function saveResume() {
       where: {
         userId: user.id,
       },
-      create: {
+      update: {
         content,
       },
-      update: {
+      create: {
         userId: user.id,
         content,
       },
@@ -39,8 +39,8 @@ export async function saveResume() {
     revalidatePath("/resume");
     return resume;
   } catch (error) {
-    throw new Error("Error saving resume", error.message);
-    throw new Error("Failed to save resume");
+    console.log("Error saving resume", error);
+    throw new Error("Error saving resume", error);
   }
 }
 
